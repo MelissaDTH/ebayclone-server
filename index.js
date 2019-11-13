@@ -8,8 +8,8 @@ const bodyParserMiddleWare = bodyParser.json();
 const cors = require("cors");
 const corsMiddleWare = cors();
 
-// Models & DB
-const Advertisement = require("./advertisement/model");
+// Models & routing
+const AdvertisementRouter = require('./advertisement/router')
 
 // Initial
 const port = process.env.PORT || 4000;
@@ -17,6 +17,6 @@ const port = process.env.PORT || 4000;
 app
   .use(corsMiddleWare)
   .use(bodyParserMiddleWare)
-  .use(Advertisement)
+  .use(AdvertisementRouter)
 
   app.listen(port, () => console.log(`This app is listening on port ${port}!`));
