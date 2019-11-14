@@ -15,6 +15,8 @@ const UserRouter = require('./user/router')
 // Initial
 const port = process.env.PORT || 4000;
 
+require("./seeds");
+
 app
   .use(corsMiddleWare)
   .use(bodyParserMiddleWare)
