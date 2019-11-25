@@ -10,13 +10,17 @@ const corsMiddleWare = cors();
 
 // Models & routing
 const AdvertisementRouter = require('./advertisement/router')
+const UserRouter = require('./user/router')
 
 // Initial
 const port = process.env.PORT || 4000;
+
+require("./seeds");
 
 app
   .use(corsMiddleWare)
   .use(bodyParserMiddleWare)
   .use(AdvertisementRouter)
+  .use(UserRouter)
 
   app.listen(port, () => console.log(`This app is listening on port ${port}!`));
